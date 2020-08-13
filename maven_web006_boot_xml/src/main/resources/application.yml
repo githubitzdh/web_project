@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: web006
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/webdemo001?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 1234
+mybatis:
+  type-aliases-package: com.czxy.webdemo.domain
+  mapper-locations: classpath:mybatis/mappers/StudentMapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+pagehelper:
+  helper-dialect: mysql
+  row-bounds-with-count: true
+  reasonable: true

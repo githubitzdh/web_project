@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 开启下划线命名与驼峰的自动映射 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>	
+	</settings>
+	
+	<plugins>
+		<!-- 配置分页助手的插件 -->
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<!-- 指定数据库方言 -->
+			<property name="helperDialect" value="mysql"/>
+			<!-- 设置为true时，查询结果中会查询出总条数信息 -->
+			<property name="rowBoundsWithCount" value="true"/>
+			<!-- 分页合理化参数，pageNum<=0 时会查询第一页，pageNum>pages （超过总数时），会查询最后一页 -->
+			<property name="reasonable" value="true"/>
+		</plugin>
+	</plugins>
+
+</configuration>
